@@ -1,0 +1,32 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import "@/styles/globals.css";
+import "@fontsource/cinzel-decorative";
+import "@fontsource-variable/cinzel";
+
+import Meta from "@/components/Meta.astro";
+
+import { Nav } from "@/components/Nav";
+import config from "@/config";
+
+const {
+  meta: { title, description = config.description },
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <Meta title={title} description={description} />
+    <ViewTransitions />
+  </head>
+  <body
+    class="bg-bg font-cinzel min-h-[100vh] flex flex-col justify-center align-middle"
+  >
+    <Nav client:only="react" />
+    <main
+      class="mx-auto px-5 max-w-[900px] min-h-[calc(100dvh-70px)] py-10 pt-[120px] w500:min-h-[calc(100dvh-70px)] w400:pt-[140px] z-10 bg-transparent relative"
+    >
+      <slot />
+    </main>
+  </body>
+</html>
