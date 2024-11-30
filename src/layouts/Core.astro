@@ -22,7 +22,9 @@ const {
   <body
     class="bg-bg font-cinzel min-h-[100vh] flex flex-col justify-center align-middle"
   >
-    <Nav client:only="react" />
+    <div class="w-full flex flex-col items-center">
+      <Nav client:only="react" />
+    </div>
     <main
       class="mx-auto px-5 max-w-[900px] min-h-[calc(100dvh-70px)] py-10 pt-[120px] w500:min-h-[calc(100dvh-70px)] w400:pt-[140px] z-10 bg-transparent relative"
     >

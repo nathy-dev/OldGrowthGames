@@ -11,50 +11,50 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
-const components: { title: string; href: string; description: string }[] = [
+const team: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+    title: "Nathy",
+    href: "/party?focus=nathy",
+    description: "Engineer and Narrative designer",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
+    title: "Luke",
+    href: "/party?focus=luke",
+    description: "Gameplay Designer",
   },
   {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+    title: "Cubby",
+    href: "/party?focus=cubby",
+    description: "3d Artist & Illustrator",
   },
 ];
 
+const games: { title: string; href?: string; description: string }[] = [
+  {
+    title: "Cub Scout",
+    href: "/cubscout",
+    description:
+      "A narrative heavy souls-like where you please as a lost scout looking for her troop.",
+  },
+  {
+    title: "Foxtrot",
+    href: "/foxtrot",
+    description: "A creature collecting mobile game, incentivizing fitness",
+  },
+  {
+    title: "Stay Tuned for More",
+    description: "Check back later for more releases.",
+  },
+];
+
+const contact = [{ email: "nathy@oldgrowthgames.xyz" }];
+
 export function Nav() {
   return (
-    <NavigationMenu className="relative left-0 top-5 z-50 w-full">
+    <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Games</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
@@ -64,33 +64,32 @@ export function Nav() {
                     href="/"
                   >
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      shadcn/ui
+                      Our Games
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
-                      Beautifully designed components that you can copy and
-                      paste into your apps. Accessible. Customizable. Open
-                      Source.
+                      We forge desktop and mobile games inspired by the games we
+                      grew up on with modern twists.
                     </p>
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
-              </ListItem>
+              {games.map((component) => (
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}
+                >
+                  {component.description}
+                </ListItem>
+              ))}
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Lance fournie</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {components.map((component) => (
+              {team.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
@@ -104,7 +103,7 @@ export function Nav() {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-            Documentation
+            Contact us
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
