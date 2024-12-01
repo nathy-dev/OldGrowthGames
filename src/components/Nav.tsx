@@ -51,7 +51,7 @@ const games: { title: string; href?: string; description: string }[] = [
 const contact = [{ email: "nathy@oldgrowthgames.xyz" }];
 
 const GamesLinks = ({ mobile }: { mobile?: boolean }) => (
-  <ul className="grid gap-3 p-2  md:p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+  <ul className="grid gap-3 p-2  md:p-6 md:w-[500px] md:grid-cols-[.75fr_1fr]">
     {!mobile && (
       <li className="row-span-3">
         <NavigationMenuLink asChild>
@@ -87,7 +87,7 @@ const GamesLinks = ({ mobile }: { mobile?: boolean }) => (
 );
 
 const PartyLinks = () => (
-  <ul className="grid w-content gap-3 p-2 md:p-6 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+  <ul className="grid w-content gap-3 p-2 md:p-6 md:w-[500px] md:grid-cols-2">
     {team.map((component) => (
       <ListItem
         key={component.title}
