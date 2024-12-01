@@ -7,7 +7,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Map } from "lucide-react";
 
 type Props = {
   children: React.ReactNode;
@@ -17,13 +17,13 @@ export const Hamburger = ({ children }: Props) => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button>
-          <Menu />
+        <Button variant="ghost" size="max">
+          <Map size={24} />
         </Button>
       </SheetTrigger>
       <SheetContent>
-        <SheetHeader>
-          <SheetTitle className="font-nasa">WANING GIBBON</SheetTitle>
+        <SheetHeader className="sr-only">
+          <SheetTitle>Old Growth Games</SheetTitle>
         </SheetHeader>
         <div>{children}</div>
         <SheetFooter></SheetFooter>
