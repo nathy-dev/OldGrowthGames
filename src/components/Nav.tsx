@@ -12,6 +12,8 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Hamburger } from "./hamburger";
 import { Typography } from "./ui/typography";
+import { SiBluesky, SiTiktok, SiYoutube } from "@icons-pack/react-simple-icons";
+import { Button } from "./ui/button";
 
 const team: { title: string; href: string; description: string }[] = [
   {
@@ -49,6 +51,33 @@ const games: { title: string; href?: string; description: string }[] = [
 ];
 
 const contact = [{ email: "nathy@oldgrowthgames.xyz" }];
+
+const ContactInfo = () => (
+  <ul className="flex flex-col  p-2 md:p-6 md:w-[500px] md:grid-cols-2">
+    <ListItem title="Email" href="mailto:nathy@oldgrowthgames.xyz">
+      nathy@oldgrowthgames.xyz
+    </ListItem>
+    <ListItem title="Find us on social media">
+      <div className="flex flex-row">
+        <Button variant="ghost" asChild>
+          <a href="">
+            <SiBluesky />
+          </a>
+        </Button>
+        <Button variant="ghost" asChild>
+          <a href="">
+            <SiYoutube />
+          </a>
+        </Button>
+        <Button variant="ghost" asChild>
+          <a href="">
+            <SiTiktok />
+          </a>
+        </Button>
+      </div>
+    </ListItem>
+  </ul>
+);
 
 const GamesLinks = ({ mobile }: { mobile?: boolean }) => (
   <ul className="grid gap-3 p-2  md:p-6 md:w-[500px] md:grid-cols-[.75fr_1fr]">
@@ -110,6 +139,7 @@ export function Nav() {
           <Typography as="h2">Lance fournie</Typography>
           <PartyLinks />
           <Typography as="h2">Contact</Typography>
+          <ContactInfo />
         </Hamburger>
       </div>
       <div className="hidden md:flex">
@@ -127,9 +157,10 @@ export function Nav() {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Contact us
-            </NavigationMenuLink>
+            <NavigationMenuTrigger>Contact</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ContactInfo />
+            </NavigationMenuContent>
           </NavigationMenuItem>
         </NavigationMenuList>
       </div>
