@@ -21,7 +21,7 @@ export const Hamburger = ({ children }: Props) => {
           <Map size={24} />
         </Button>
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent className="w-[90%]">
         <SheetHeader className="sr-only">
           <SheetTitle>Old Growth Games</SheetTitle>
         </SheetHeader>
