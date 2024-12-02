@@ -19,12 +19,12 @@ const team: { title: string; href: string; description: string }[] = [
   {
     title: "Nathy",
     href: "/party?focus=nathy",
-    description: "Engineer and Narrative designer",
+    description: "Engineer & Narrative designer",
   },
   {
     title: "Luke",
     href: "/party?focus=luke",
-    description: "Gameplay Designer",
+    description: "Gameplay & Audio Designer",
   },
   {
     title: "Cubby",
