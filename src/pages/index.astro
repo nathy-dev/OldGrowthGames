@@ -5,6 +5,11 @@ import Core from "../layouts/Core.astro";
 ---
 
 <Core meta={{ title: config.title }}>
-  <Typography as="h1" styleMod={["h1", "title"]}>Old Growth Games</Typography
+  <Typography as="h1" styleMod={["h1", "title", "blur"]}
+    ><div
+      class="bg-[radial-gradient(circle_at_50%_100%,black,transparent)] p-4 rounded-sm"
+    >
+      Old Growth Games
+    </div></Typography
   ></Core
 >

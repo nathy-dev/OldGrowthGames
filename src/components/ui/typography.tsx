@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
 type TextElement = "h1" | "h2" | "h3" | "h4" | "p" | "span";
-type StyleMod = TextElement | "title";
+type StyleMod = TextElement | "title" | "blur";
 
 type Props = {
   as: TextElement;
@@ -33,6 +33,9 @@ export const Typography = ({ as, children, styleMod }: Props) => {
         break;
       case "title":
         styleMods.push("font-cinzelDisplay");
+        break;
+      case "blur":
+        styleMods.push("bg-[radial-gradient(circle, green, blue)]");
     }
   };
 
